@@ -282,6 +282,7 @@ struct TabItemView: View {
     let showsControlShortcutHint: Bool
     let shortcutModifierSymbol: String
     let allowsClose: Bool
+    var showsCloseButton: Bool = true
     let allowsContextMenu: Bool
     let contextMenuState: TabContextMenuState
     let moveDestinationsProvider: () -> [TabContextMoveDestination]
@@ -1046,7 +1047,7 @@ struct TabItemView: View {
                         .frame(width: accessorySlotSize, height: accessorySlotSize)
                         .saturation(saturation)
                 }
-            } else if allowsClose && (isSelected || isHovered || isCloseHovered) {
+            } else if allowsClose && showsCloseButton && (isSelected || isHovered || isCloseHovered) {
                 // Close button (always visible on active tab, shown on hover for others)
                 Button {
                     onClose(.closeButton)

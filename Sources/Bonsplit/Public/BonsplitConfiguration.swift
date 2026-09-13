@@ -53,6 +53,9 @@ public struct BonsplitConfiguration: Sendable {
     /// Whether to allow closing tabs
     public var allowCloseTabs: Bool
 
+    /// Whether to draw close buttons; does not disable middle-click or menu closing.
+    public var showsTabCloseButton: Bool
+
     /// Whether to allow closing the last pane
     public var allowCloseLastPane: Bool
 
@@ -110,6 +113,7 @@ public struct BonsplitConfiguration: Sendable {
     public init(
         allowSplits: Bool = true,
         allowCloseTabs: Bool = true,
+        showsTabCloseButton: Bool = true,
         allowCloseLastPane: Bool = false,
         allowTabReordering: Bool = true,
         allowCrossPaneTabMove: Bool = true,
@@ -123,6 +127,7 @@ public struct BonsplitConfiguration: Sendable {
     ) {
         self.allowSplits = allowSplits
         self.allowCloseTabs = allowCloseTabs
+        self.showsTabCloseButton = showsTabCloseButton
         self.allowCloseLastPane = allowCloseLastPane
         self.allowTabReordering = allowTabReordering
         self.allowCrossPaneTabMove = allowCrossPaneTabMove

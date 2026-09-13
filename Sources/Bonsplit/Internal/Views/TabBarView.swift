@@ -1260,6 +1260,7 @@ struct TabBarView: View {
             showsControlShortcutHint: showsControlShortcutHints,
             shortcutModifierSymbol: controlKeyMonitor.shortcutModifierSymbol,
             allowsClose: controller.configuration.allowCloseTabs,
+            showsCloseButton: controller.configuration.showsTabCloseButton,
             allowsContextMenu: controller.configuration.allowsTabContextMenu,
             contextMenuState: contextMenuState,
             moveDestinationsProvider: {
