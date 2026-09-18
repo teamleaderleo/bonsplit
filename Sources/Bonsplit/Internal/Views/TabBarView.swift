@@ -1536,6 +1536,8 @@ struct TabBarView: View {
                 let button = buttons[index]
                 splitActionButton(button, tooltips: tooltips)
                 .accessibilityIdentifier(splitActionButtonAccessibilityIdentifier(button))
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(splitActionButtonTooltip(button, tooltips: tooltips))
                 .safeHelp(splitActionButtonTooltip(button, tooltips: tooltips))
             }
         }
@@ -1560,8 +1562,6 @@ struct TabBarView: View {
                         performSplitActionButton(button)
                     }
                 )
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel(splitActionButtonTooltip(button, tooltips: tooltips))
                 .accessibilityAddTraits(.isButton)
         } else {
             Button {
