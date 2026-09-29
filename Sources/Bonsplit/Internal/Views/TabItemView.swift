@@ -1387,6 +1387,15 @@ enum TabContextMenuBuilder {
         menu.addItem(.separator())
 
         addAction(
+            title: localized("tabContext.closeTab", defaultValue: "Close Tab"),
+            action: .close,
+            enabled: !state.isPinned,
+            state: state,
+            target: target,
+            to: menu
+        )
+
+        addAction(
             title: localized("tabContext.closeTabsToLeft", defaultValue: "Close Tabs to Left"),
             action: .closeToLeft,
             enabled: state.canCloseToLeft,
@@ -1749,6 +1758,7 @@ enum TabContextMenuBuilder {
         case .rename,
              .clearName,
              .copyIdentifiers,
+             .close,
              .closeToLeft,
              .closeToRight,
              .closeOthers,
