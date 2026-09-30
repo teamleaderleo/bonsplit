@@ -1260,6 +1260,7 @@ struct TabBarView: View {
             showsControlShortcutHint: showsControlShortcutHints,
             shortcutModifierSymbol: controlKeyMonitor.shortcutModifierSymbol,
             allowsClose: controller.configuration.allowCloseTabs,
+            showsCloseButton: controller.configuration.showsTabCloseButton,
             allowsContextMenu: controller.configuration.allowsTabContextMenu,
             contextMenuState: contextMenuState,
             moveDestinationsProvider: {
@@ -1569,6 +1570,7 @@ struct TabBarView: View {
                 splitActionButtonIcon(button.icon)
             }
             .buttonStyle(SplitActionButtonStyle(appearance: appearance, layout: tabBarLayout))
+            .accessibilityLabel(splitActionButtonTooltip(button, tooltips: tooltips))
         }
     }
 
